@@ -19,9 +19,8 @@ class Solution:
         return output
     
 def main():
-    nums = input("Enter a list of integers separated by spaces: ").strip().split()
-
-    nums = [int(num) for num in nums]
+    nums = input("Enter a list of integers separated by spaces: ").strip().split() # turns the input string into a list of strings 
+    nums = [int(num) for num in nums] # make the list a list of intergers from list of strings
 
     solution = Solution()
     result = solution.productExceptSelf(nums)
