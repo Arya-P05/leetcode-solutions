@@ -29,6 +29,12 @@ class Robot:
 
     def getDir(self) -> str:
         return self.dirLabels[self.direction]
+
+def testCase1():
+    rob = Robot(6, 4)
+    rob.step(6)
+    assert rob.getDir() == "North"
+    assert rob.getPos() == [5, 1]
     
 def main():
     robot = None
@@ -65,4 +71,5 @@ def main():
             print("Invalid command or robot not initialized. Please try again.")
 
 if __name__ == "__main__":
+    testCase1()
     main()
