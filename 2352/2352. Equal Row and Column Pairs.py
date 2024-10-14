@@ -1,3 +1,5 @@
+from typing import List, defaultdict
+
 class Solution:
     def equalPairs(self, grid: List[List[int]]) -> int:
         hashm = defaultdict(int)
