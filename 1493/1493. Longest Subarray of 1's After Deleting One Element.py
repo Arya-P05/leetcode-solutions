@@ -16,6 +16,6 @@ class Solution:
                 
                 left += 1
             
-            max_zeros = max(max_zeros, ((right_idx - left_idx) + 1))
+            max_zeros = max(max_zeros, (right_idx - left_idx))
         
-        return max_zeros - 1
+        return max_zeros
