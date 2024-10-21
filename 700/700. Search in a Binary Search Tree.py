@@ -8,11 +8,10 @@ class TreeNode:
 
 class Solution:
     def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
-        if not root:
-            return None
-        elif root.val == val:
+        if not root or root.val == val:
             return root
-        elif root.val > val:
+        elif val < root.val:
             return self.searchBST(root.left, val)
         else:
-            return self.searchBST(root.right, val)        
+            return self.searchBST(root.right, val)
+
