@@ -8,23 +8,25 @@ class ListNode:
 class Solution:
     def pairSum(self, head: Optional[ListNode]) -> int:
         head_ptr = head
-        vals = []
+        fast, slow = head, head
 
-        while (head_ptr is not None):
-            vals.append(head_ptr.val)
-            head_ptr = head_ptr.next
+        while (fast is not None):
+            slow = slow.next
+            fast = fast.next.next
 
-        n = len(vals)
+        prev, end = None, None
+
+        while (slow is not None):
+            end = slow.next
+            slow.next = prev
+            prev = slow
+            slow = end
+        
         max_sum = 0
 
-        for idx, value in enumerate(vals):
-           if idx <= ((n / 2) - 1):
-                twin_idx = n - 1 - idx
-
-                temp_sum = vals[idx] + vals[twin_idx]
-
-                max_sum = max(max_sum, temp_sum)
+        while (prev is not None):
+            max_sum = max(max_sum, (head.val + prev.val))
+            head = head.next
+            prev = prev.next
         
         return max_sum
-
-
