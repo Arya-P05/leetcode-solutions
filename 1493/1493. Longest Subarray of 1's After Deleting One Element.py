@@ -2,9 +2,7 @@ from typing import List
 
 class Solution:
     def longestSubarray(self, nums: List[int]) -> int:
-        max_zeros = 0
-        left_idx = 0
-        num_zeros = 0
+        max_zeros, left_idx, num_zeros = 0, 0, 0
 
         for right_idx in range(len(nums)):
             if nums[right_idx] == 0:
