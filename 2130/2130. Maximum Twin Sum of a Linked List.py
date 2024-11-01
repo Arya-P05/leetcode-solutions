@@ -7,7 +7,6 @@ class ListNode:
 
 class Solution:
     def pairSum(self, head: Optional[ListNode]) -> int:
-        head_ptr = head
         fast, slow = head, head
 
         while (fast is not None):
