@@ -1,3 +1,6 @@
+# INCORRECT SOLUTION
+# will come back after class and solve lol
+
 from typing import List
 
 class Solution:
