@@ -1,32 +1,24 @@
-# INCORRECT SOLUTION
-# will come back after class and solve lol
-
 from typing import List
 from math import ceil
 
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
-        low = 0
+        low = ceil(sum(piles) / h)
         high = max(piles)
         ans = high
 
-        while low <= high:
+        while low < high:
             mid = (low + high) // 2
             time = 0
 
             for pile in piles:
-                if mid >= pile:
-                    time += 1
-                else:
                     time += ceil(pile/mid)
             
             if time > h:
                 low = mid + 1
-            elif time < h:
-                high = mid - 1
             else:
                 ans = min(mid, ans)
-                high = mid - 1
+                high = mid
         
         return ans
     
