@@ -2,6 +2,7 @@
 # will come back after class and solve lol
 
 from typing import List
+from math import ceil
 
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
