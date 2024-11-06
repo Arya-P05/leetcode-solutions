@@ -9,7 +9,7 @@ class TreeNode:
 
 class Solution:
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
-        def areBothSymmetric(left, right):
+        def areBothSymmetric(left: Optional[TreeNode], right: Optional[TreeNode]) -> bool:
             if (left is None and right is None):
                 return True
             elif (right is None or left is None):
