@@ -12,7 +12,7 @@ class Solution:
         def areBothSymmetric(left, right):
             if (left is None and right is None):
                 return True
-            elif (left and right is None) or (left is None and right):
+            elif right is None or (left is None and right):
                 return False
             elif (left.val != right.val):
                 return False
