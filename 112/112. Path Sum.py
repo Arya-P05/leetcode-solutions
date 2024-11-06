@@ -9,13 +9,13 @@ class TreeNode:
 
 class Solution:
     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
-        def helper(root, curr, target):
+        def sumFound(root, curr, target):
             if root is None:
                 return False
             elif ((curr + root.val) == target) and (root.left is None) and (root.right is None):
                 return True 
             else:
-                return helper(root.left, curr + root.val, target) or helper(root.right, curr + root.val, target)
+                return sumFound(root.left, curr + root.val, target) or sumFound(root.right, curr + root.val, target)
 
         if (root is None):
             return False
@@ -23,5 +23,5 @@ class Solution:
             return True
         else:
             curr_sum = root.val
-            return helper(root.left, curr_sum, targetSum) or helper(root.right, curr_sum, targetSum)
+            return sumFound(root.left, curr_sum, targetSum) or sumFound(root.right, curr_sum, targetSum)
         
