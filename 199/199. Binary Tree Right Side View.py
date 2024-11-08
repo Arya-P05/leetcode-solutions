@@ -13,7 +13,7 @@ class Solution:
         right_side_values = []
         app_q = collections.deque([root])
 
-        while (app_q is not None):
+        while (app_q):
             right_side_node = None
             num_nodes = len(app_q)
 
@@ -25,7 +25,7 @@ class Solution:
                     app_q.append(node.left)
                     app_q.append(node.right)
                 
-            if (right_side_node is None):
+            if (right_side_node is not None):
                 right_side_values.append(right_side_node.val)
             
         return right_side_values
