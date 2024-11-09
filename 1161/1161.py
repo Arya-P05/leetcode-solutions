@@ -21,18 +21,16 @@ class Solution:
         while app_queue:
             total = 0
             num_nodes = len(app_queue)
-            changed = False
 
             for node_idx in range(num_nodes):
                 curr_node = app_queue.popleft()
 
                 if curr_node is not None:
-                    changed = True
                     total += curr_node.val
                     app_queue.append(curr_node.left)
                     app_queue.append(curr_node.right)
             
-            if total > max_total and changed:
+            if total > max_total:
                 max_total = total
                 output_level = curr_level
 
