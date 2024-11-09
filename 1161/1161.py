@@ -1,5 +1,3 @@
-# Very jank solution with the changed tracker, will try to make something more robust
-
 import collections
 from typing import Optional
 
