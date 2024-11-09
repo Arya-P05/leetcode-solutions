@@ -27,8 +27,12 @@ class Solution:
 
                 if curr_node is not None:
                     total += curr_node.val
-                    app_queue.append(curr_node.left)
-                    app_queue.append(curr_node.right)
+
+                    if curr_node.left:
+                        app_queue.append(curr_node.left)
+                    
+                    if curr_node.right:
+                        app_queue.append(curr_node.right)
             
             if total > max_total:
                 max_total = total
