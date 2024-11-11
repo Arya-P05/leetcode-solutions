@@ -29,11 +29,4 @@ class Solution:
             ln(root1, r1)
             ln(root2, r2)
 
-            if len(r1) != len(r2):
-                return False
-
-            for idx, value in enumerate(r1):
-                if r2[idx] != value:
-                    return False
-            
-            return True
+            return r1 == r2
