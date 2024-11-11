@@ -9,24 +9,15 @@ class TreeNode:
 
 class Solution:
     def leafSimilar(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
-        r1 = []
-        r2 = []
-
-        def ln(root, arr):
-            if root and root.left is None and root.right is None:
-                arr.append(root.val)
-            elif root.left and root.right:
-                ln(root.left, arr)
-                ln(root.right, arr)
-            elif root.left:
-                ln(root.left, arr)
-            elif root.right:
-                ln(root.right, arr)
+        def dfs(root):
+            if root is None:
+                return []
+            elif root.left is None and root.right is None:
+                return [root.val]
+            else:
+                return dfs(root.left) + dfs(root.right)
 
         if root1 is None and root2 is None:
             return False
         else:
-            ln(root1, r1)
-            ln(root2, r2)
-
-            return r1 == r2
+            return dfs(root1) == dfs(root2)
