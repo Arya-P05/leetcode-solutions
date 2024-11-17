@@ -24,7 +24,7 @@ class Solution:
             else:
                 return check_path(curr_sum, targetSum, root.left) + check_path(curr_sum, targetSum, root.right)
         
-        def dfs(root) -> int:
+        def dfs(root: TreeNode) -> int:
             if root is None:
                 return 0
             else:
