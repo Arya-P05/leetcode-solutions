@@ -29,3 +29,4 @@ class Solution:
                     root.right = self.deleteNode(root.right, root.val)
 
         return root
+    
