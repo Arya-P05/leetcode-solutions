@@ -9,10 +9,10 @@ class TreeNode:
 
 class Solution:
     def longestZigZag(self, root: Optional[TreeNode]) -> int:
-        self.len_longest_zigzag = 0
+        self.longest_zigzag_len = 0
 
         def dfs(node, left, right):
-            self.len_longest_zigzag = max(self.len_longest_zigzag, left, right)
+            self.longest_zigzag_len = max(self.longest_zigzag_len, left, right)
 
             if node.left:
                 dfs(node.left, right + 1, 0)
@@ -21,4 +21,4 @@ class Solution:
                 dfs(node.right, 0, left + 1)
 
         dfs(root, 0, 0)
-        return self.len_longest_zigzag
+        return self.longest_zigzag_len
