@@ -5,6 +5,9 @@
 #          otherwise return 0
 # def guess(num: int) -> int:
 
+def guess(num: int) -> int:
+    pass
+
 class Solution:
     def guessNumber(self, n: int) -> int:
         max_number = n
