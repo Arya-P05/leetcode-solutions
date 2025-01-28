@@ -1,8 +1,9 @@
 from typing import List
+from collections import defaultdict 
 
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        words = {}
+        words = defaultdict(list)
 
         for word in strs:
             count = [0] * 26    
@@ -10,12 +11,9 @@ class Solution:
             for char in word:
                 count[ord(char) - ord('a')] += 1
 
-            organized_wrd = ''.join(chr(idx + ord('a')) * count[idx] for idx in range(26))
-            
-            if organized_wrd in words:
-                words[organized_wrd].append(word)
-            else:
-                words[organized_wrd] = [word]
+            key_wrd = tuple(count)
+
+            words[key_wrd].append(word)
             
         return words.values()
     
