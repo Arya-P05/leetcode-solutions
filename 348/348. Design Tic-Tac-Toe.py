@@ -1,7 +1,7 @@
 from typing import List
 
 class TicTacToe:
-    def init(self, n: int) -> None:
+    def __init__(self, n: int) -> None:
         self.p1_symbol = "X"
         self.p2_symbol = "O"
         self.board = [["" for _ in range(n)] for _ in range(n)]
