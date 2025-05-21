@@ -1,0 +1,17 @@
+class Solution:
+    def wordPattern(self, pattern: str, s: str) -> bool:
+        pattern_map = {}
+        s = s.split(" ")
+
+        if len(set(pattern)) != len(set(s)) or len(pattern) != len(s):
+            return False
+
+        for idx in range(len(pattern)):
+            letter = pattern[idx]
+
+            if letter not in pattern_map:
+                pattern_map[letter] = s[idx]
+            elif pattern_map[letter] != s[idx]:
+                return False
+            
+        return True
