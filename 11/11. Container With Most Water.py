@@ -1,26 +1,23 @@
 from typing import List
 
 class Solution:
-    def maxArea(self, height: List[int]) -> int:
-        maxA = 0
-        left = 0
-        right = len(height) - 1
+    def maxArea(self, heights: List[int]) -> int:
+        l = 0
+        r = len(heights) - 1
+        max_area = 0
 
-        while left <= right:
-            left_height = height[left]
-            right_height = height[right]
+        while l < r:
+            curr_area = min(heights[l], heights[r]) * (r - l)
 
-            if left_height <= right_height:
-                area = left_height * (right - left)
-                left += 1
-            else:
-                area = right_height * (right - left)
-                right -= 1
+            if curr_area >= max_area:
+                max_area = curr_area
             
-            if area > maxA:
-                maxA = area
-        
-        return maxA  
+            if heights[l] > heights[r]:
+                r -= 1
+            else:
+                l += 1
+            
+        return max_area
 
 def main():
     heights = input("Write the height of each line seperated by a space: ").strip().split()
