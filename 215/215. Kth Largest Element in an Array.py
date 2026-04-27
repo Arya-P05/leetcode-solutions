@@ -15,7 +15,6 @@ class Solution:
         #     return maxNumIdx
 
         # res = 0
-
         # for idx in range(k):
         #     res = nums.pop(findMax(nums))
 
