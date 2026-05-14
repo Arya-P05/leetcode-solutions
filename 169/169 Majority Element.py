@@ -1,17 +1,30 @@
-from typing import List
-
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        winner = None
+        # hasht = defaultdict(int)
+
+        # for number in nums:
+        #     hasht[number] += 1
+        
+        # biggest = float('-inf')
+        # count = 0
+
+        # for key, val in hasht.items():
+        #     if val > count:
+        #         count = val
+        #         biggest = key
+        
+        # return biggest
+
         count = 0
+        candidate = 0
 
         for number in nums:
             if count == 0:
-                winner = number
+                candidate = number
             
-            if number == winner:
-                count += 1
-            else:
+            if number != candidate:
                 count -= 1
-            
-        return winner
+            else:
+                count += 1
+        
+        return candidate
